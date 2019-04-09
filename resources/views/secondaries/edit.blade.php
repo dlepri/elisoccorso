@@ -28,7 +28,7 @@
                             <div class="col">
                                 <label for="image">Foto</label>
                                 <div class="custom-file">
-                                    <input type="file" class="custom-file-input @if ($errors->has('icon')) is-invalid @endif" id="image" name="image">
+                                    <input type="file" class="custom-file-input @if ($errors->has('image')) is-invalid @endif" id="image" name="image">
                                     <label class="custom-file-label" for="image"></label>
                                     @includeWhen($errors->has('image'), 'components.error', ['error' => $errors->first('image')])
                                   </div>
