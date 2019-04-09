@@ -17,7 +17,7 @@ class Secondary extends JsonResource
         return [
             'name' => $this->name,
             'description' => $this->description,
-            'image' => $this->image,
+            'image' => ($this->image) ? asset('storage/'.$this->image) : null,
             'latitude' => $this->latitude,
             'longitude' => $this->longitude,
             'type' => new Type($this->type),
