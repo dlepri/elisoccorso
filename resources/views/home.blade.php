@@ -4,12 +4,11 @@
     <div class="row justify-content-center">
         <div class="col-md-12">
             <div class="card">
-
                 <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
+                  @if (session('status'))
+                    <div class="alert alert-success" role="alert">
+                      {{ session('status') }}
+                    </div>
                     @endif
                     <div id="map" class="map">
                       <div id="popup" class="ol-popup" style="display:none">
@@ -48,12 +47,6 @@
               duration: 250
             }
           });
-
-
-          /**
-           * Add a click handler to hide the popup.
-           * @return {boolean} Don't follow the href.
-           */
           closer.onclick = function() {
             overlay.setPosition(undefined);
             closer.blur();
