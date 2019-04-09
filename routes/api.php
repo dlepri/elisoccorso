@@ -23,4 +23,5 @@ Route::prefix('v1')->group(function () {
     Route::post('hospitals', 'ApiController@getHospitals');
     Route::post('pitches', 'ApiController@getPitches');
     Route::post('secondaries', 'ApiController@getSecondaries');
+    Route::post('get-poi-data', 'ApiController@getPoiData');
 });

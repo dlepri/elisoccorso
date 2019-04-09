@@ -30,4 +30,11 @@ class ApiController extends Controller
     public function getSecondaries(Request $request) {
 		return SecondaryResource::collection(Secondary::whereActive(true)->get());
     }
+
+    public function getPoiData(Request $request) {
+        $hospitals = HospitalResource::collection(Hospital::whereActive(true)->whereHas('pitch')->get());
+        $pitches = PitchResource::collection(Pitch::whereActive(true)->get());
+        $secondaries = SecondaryResource::collection(Secondary::whereActive(true)->get());
+        return collect(['hospitals' => $hospitals, 'pitches' => $pitches, 'secondaries' => $secondaries])->toArray();
+    }
 }
