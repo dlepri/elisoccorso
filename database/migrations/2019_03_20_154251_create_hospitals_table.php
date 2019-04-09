@@ -21,7 +21,7 @@ class CreateHospitalsTable extends Migration
             $table->decimal('latitude', 10, 8);
             $table->decimal('longitude', 11, 8);
             $table->string('hub')->nullable();
-            $table->string('pitch')->nullable();
+            $table->string('pitch_code')->nullable();
             $table->boolean('spoke')->default(false);
             $table->boolean('trauma')->default(false);
             $table->boolean('stroke')->default(false);

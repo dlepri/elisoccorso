@@ -13,14 +13,14 @@ use App\Http\Resources\Secondary as SecondaryResource;
 class ApiController extends Controller
 {
     public function pois(Request $request) {
-		$hospitals = Hospital::whereActive(true)->where('pitch', '!=', '')->whereNotNull('pitch')->get();
+		$hospitals = Hospital::whereActive(true)->whereHas('pitch')->get();
 		$pitches = Pitch::whereActive(true)->get();
 		$secondaries = Secondary::whereActive(true)->get();
 		return compact('hospitals', 'pitches', 'secondaries');
     }
 
     public function getHospitals(Request $request) {
-		return HospitalResource::collection(Hospital::whereActive(true)->where('pitch', '!=', '')->whereNotNull('pitch')->get());
+		return HospitalResource::collection(Hospital::whereActive(true)->whereHas('pitch')->get());
     }
 
     public function getPitches(Request $request) {

@@ -20,8 +20,8 @@ class Pitch extends JsonResource
             'locality' => $this->locality,
             'municipality' => $this->municipality,
             'province' => $this->province,
-            'latitude' => $this->latitude,
-            'longitude' => $this->longitude
+            'latitude' => (float) $this->latitude,
+            'longitude' => (float) $this->longitude
         ];
     }
 }

@@ -18,9 +18,9 @@ class Hospital extends JsonResource
             'code' => $this->code,
             'province' => $this->province,
             'name' => $this->name,
-            'latitude' => $this->latitude,
-            'longitude' => $this->longitude,
-            'pitch' => $this->pitch
+            'latitude' => (float) $this->latitude,
+            'longitude' => (float) $this->longitude,
+            'pitch' => new Pitch($this->pitch)
         ];
     }
 }

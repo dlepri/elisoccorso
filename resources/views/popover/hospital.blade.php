@@ -3,7 +3,7 @@
 	Tipologia: <strong>Ospedale</strong>
 	<br>Codice: <strong>{{$hospital->code}}</strong>
 	@if ($hospital->pitch)
-		<br>Piazzola: <strong>{{$hospital->pitch}}</strong>
+		<br>Piazzola: <strong>{{$hospital->pitch_code}}</strong>
 	@endif
 	@if ($hospital->hub)
 		<br>Hub: <strong>{{$hospital->hub}}</strong>

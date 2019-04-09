@@ -18,8 +18,8 @@ class Secondary extends JsonResource
             'name' => $this->name,
             'description' => $this->description,
             'image' => ($this->image) ? asset('storage/'.$this->image) : null,
-            'latitude' => $this->latitude,
-            'longitude' => $this->longitude,
+            'latitude' => (float) $this->latitude,
+            'longitude' => (float) $this->longitude,
             'type' => new Type($this->type),
             'pitch' => new Pitch($this->pitch)
         ];
